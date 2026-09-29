@@ -148,6 +148,101 @@ input[type="text"]:focus{
     text-align: center;
 }
 
+.lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin-top: 18px;
+}
+
+.lista-tarefas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #edf3f8;
+    padding: 12px;
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+}
+
+.lista-tarefas li span {
+    color: #263b52;
+}
+
+.lista-tarefas button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.lista-tarefas button:first-child {
+    color: #263b52;
+}
+
+.lista-tarefas button:last-child {
+    color: #263b52;
+}
+
+.lista-tarefas li.concluida span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+body.tema-escuro {
+    background: #1e1e2f;
+    color: white;
+}
+
+body.tema-escuro .cartao-aplicacao {
+    background: #292943;
+}
+
+body.tema-escuro .cabecalho-aplicacao {
+    color: white;
+}
+
+body.tema-escuro .caixa-entrada input {
+    background: #3a3a5a;
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas li {
+    background: #3a3a5a;
+    color: white;
+}
+
+body.tema-escuro h1{
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas li {
+    background: #3a3a5a;
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas li span {
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas .botao-concluir {
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas .botao-concluir i {
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas button:last-child {
+    color: white;
+}
+
+body.tema-escuro .lista-tarefas button i.fa-circle-check {
+    color: white !important;
+}
+
 @keyframes aparecer{
     from{
         opacity: o; transform: translateY(10px);
