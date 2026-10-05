@@ -28,11 +28,20 @@ body.modo-escuro{
 
 body{
     background: var(--gradiente-fundo);
+    background-image: url(fundo\ claro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px 20px 400px 20px;
+}
+
+body.modo-escuro{
+    background-image: url(imagem.jpg);
 }
 
 .cartao-aplicacao{
@@ -192,7 +201,7 @@ input[type="text"]:focus{
 }
 
 body.tema-escuro {
-    background: #1e1e2f;
+    background-image: url(imagem.jpg);
     color: white;
 }
 
@@ -241,6 +250,16 @@ body.tema-escuro .lista-tarefas button:last-child {
 
 body.tema-escuro .lista-tarefas button i.fa-circle-check {
     color: white !important;
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 @keyframes aparecer{
