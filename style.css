@@ -1,272 +1,230 @@
-/* Variáveis CSS - facilitar o uso de temas para formatação */
-:root{
-    --gradiente-fundo:linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    --fundo-cartao: #ffffff;
-    --cor-texto: #2d3748;
-    --cor-primaria: #6c5ce7;
-    --cor-primaria-destaque: #5b4bc4;
-    --cor-borda: #edf2f7;
-    --cor-perigo: #ff7675;
-    --cor-concluido: #a0aec0;
+:root {
+    --fundo: #f2f4ff;
+    --cartao: white;
+    --texto: #2d3748;
+    --borda: #e5e7f0;
+    --item: #f4f5fc;
+    --roxo: #6c5ce7;
 }
 
-/* Modo escuro (ativado via classe no boby) */
-body.modo-escuro{
-    --gradiente-fundo: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-    --fundo-cartao: #1a202c;
-    --cor-texto: #f7fafc;
-    --cor-borda: #4a5568;
-}
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    background: var(--gradiente-fundo);
-    background-image: url(fundo\ claro.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+body {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px 400px 20px;
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: var(--texto);
 }
 
-body.modo-escuro{
-    background-image: url(imagem.jpg);
-}
-
-.cartao-aplicacao{
-    background: var(--fundo-cartao);
-    color: var (--cor-texto);
+.cartao-aplicacao {
     width: 100%;
-    max-width: 420px;
+    max-width: 430px;
+    padding: 25px;
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: var(--cartao);
+    box-shadow: 0 10px 30px #0002;
 }
 
-.cabecalho-aplicacao{
+.cabecalho-aplicacao {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-}
-
-.cabecalho-aplicacao h1{
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.botao-icone{
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    color: var(--cor-texto);
-    cursor: pointer;
-}
-
-.caixa-entrada{
-    display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-input[type="text"]{
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid var(--cor-borda);
-    border-radius: 12px;
-    outline: none;
-    font-size: 0.95rem;
-    background: transparent;
-    color: var(--cor-texto);
+h1 {
+    font-size: 22px;
 }
 
-input[type="text"]:focus{
-    border-color: var(--cor-primaria);
-}
-
-.botao-principal{
-    background: var(--cor-primaria);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-weight: 600;
+button {
     cursor: pointer;
-    transition: transform 0.1s, background 0.2s;
 }
 
-.botao-principal:hover{
-    background: var(--cor-primaria-destaque);
-    transform: translateY(-2px);
+.botao-icone {
+    border: none;
+    background: transparent;
+    color: var(--texto);
+    font-size: 18px;
+    padding: 7px;
 }
 
-.lista-tarefas{
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.progresso {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    color: white;
+    background: linear-gradient(120deg, #6c5ce7, #a18af7);
+}
+
+.progresso h3 {
+    margin-bottom: 8px;
+}
+
+.progresso p {
+    font-size: 13px;
+}
+
+.barra {
+    height: 8px;
+    margin: 12px 0 6px;
+    border-radius: 10px;
+    background: #ffffff66;
+    overflow: hidden;
+}
+
+#preenchimento {
+    height: 100%;
+    width: 0%;
+    background: white;
+    transition: width .3s;
+}
+
+#porcentagem {
+    text-align: right;
+}
+
+.caixa-entrada {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    outline: none;
+    background: var(--item);
+    color: var(--texto);
+}
+
+input:focus {
+    border-color: var(--roxo);
+}
+
+.botao-principal {
+    padding: 11px 13px;
+    border: none;
+    border-radius: 10px;
+    background: var(--roxo);
+    color: white;
+    white-space: nowrap;
+}
+
+.botao-principal:hover {
+    background: #5746ce;
+}
+
+.filtros {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.filtro {
+    flex: 1;
+    padding: 9px 5px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: var(--item);
+    color: var(--texto);
+}
+
+.filtro.ativo {
+    background: var(--roxo);
+    color: white;
+}
+
+.lista-tarefas {
     list-style: none;
     max-height: 280px;
     overflow-y: auto;
 }
 
-.iten-tarefa{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px;
-    background: var(--cor-borda);
-    border-radius: 10px;
-    border-bottom: 10px;
-    animation: aparecer 0.3s ease;
-}
-
-.item-tarfa.concluido span{
-    text-decoration: line-through;
-    color: var(--cor-concluido);
-}
-
-.acoes.tarefa{
-    display: flex;
-    gap: 8px;
-}
-
-.botap-acao{
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--cor-texto);
-}
-
-.botao-acao.excluir:hover{
-    color: var(--cor-perigo);
-}
-
-.rodape-aplicacao{
-    margin-top: 15px;
-    font-size: 0.85rem;
-    color: var(--cor-concluido);
-    text-align: center;
-}
-
-.lista-tarefas {
-    list-style: none;
-    padding: 0;
-    margin-top: 18px;
-}
-
 .lista-tarefas li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    background: #edf3f8;
+    justify-content: space-between;
+    gap: 8px;
     padding: 12px;
     margin-bottom: 8px;
-
     border-radius: 10px;
+    background: var(--item);
 }
 
 .lista-tarefas li span {
-    color: #263b52;
-}
-
-.lista-tarefas button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 8px;
-}
-
-.lista-tarefas button:first-child {
-    color: #263b52;
-}
-
-.lista-tarefas button:last-child {
-    color: #263b52;
+    overflow-wrap: anywhere;
 }
 
 .lista-tarefas li.concluida span {
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: .5;
+}
+
+.lista-tarefas button {
+    border: none;
+    background: transparent;
+    color: var(--texto);
+    font-size: 15px;
+    margin-left: 7px;
+}
+
+.lista-tarefas button:last-child:hover {
+    color: #e05262;
+}
+
+footer {
+    margin-top: 15px;
+    text-align: center;
+    color: #9295a9;
+    font-size: 13px;
 }
 
 body.tema-escuro {
-    background-image: url(imagem.jpg);
-    color: white;
+    --fundo: #1b1b2e;
+    --cartao: #292943;
+    --texto: #f5f5ff;
+    --borda: #44445d;
+    --item: #393952;
+
+    background: linear-gradient(135deg, #25243e, #171725);
+    color: var(--texto);
 }
 
-body.tema-escuro .cartao-aplicacao {
-    background: #292943;
+body.tema-escuro .progresso {
+    background: linear-gradient(120deg, #5143b4, #7966d5);
 }
 
-body.tema-escuro .cabecalho-aplicacao {
-    color: white;
-}
-
-body.tema-escuro .caixa-entrada input {
-    background: #3a3a5a;
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas li {
-    background: #3a3a5a;
-    color: white;
-}
-
-body.tema-escuro h1{
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas li {
-    background: #3a3a5a;
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas li span {
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas .botao-concluir {
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas .botao-concluir i {
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas button:last-child {
-    color: white;
-}
-
-body.tema-escuro .lista-tarefas button i.fa-circle-check {
-    color: white !important;
-}
-
-.foto-perfil {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-@keyframes aparecer{
-    from{
-        opacity: o; transform: translateY(10px);
+@media (max-width: 400px) {
+    .cartao-aplicacao {
+        padding: 18px;
     }
-    to{
-        opacity: 1; transform: translateY(0);
+
+    h1 {
+        font-size: 19px;
+    }
+
+    .botao-principal {
+        padding: 10px;
     }
 }
